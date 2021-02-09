@@ -70,6 +70,6 @@ p(control.my_all? { |i| i < 10 })
 p(control.my_any? { |i| i < 5 })
 p(control.my_none? { |i| i < 3 })
 p control.my_count(2)
-p control.my_map(my_proc) #{ |i| i * 2 }
-p control.my_inject() { |sum, i| sum + i }
-p multiply_els(control) 
+p control.my_map(my_proc) # { |i| i * 2 }
+p(control.my_inject { |sum, i| sum + i })
+p multiply_els(control)
