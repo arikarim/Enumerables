@@ -68,7 +68,7 @@ puts
 p(control.my_select { |num| num > 3 })
 p(control.my_all? { |i| i < 10 })
 p(control.my_any? { |i| i < 5 })
-p(control.my_none? { |i| i < 3 })
+p(control.my_none? { |value| value < 3 })
 p control.my_count(2)
 p control.my_map(my_proc) # { |i| i * 2 }
 p(control.my_inject { |sum, i| sum + i })
