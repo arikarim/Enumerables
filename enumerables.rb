@@ -1,4 +1,4 @@
-# Lets begin.
+# Lets start.
 module Enumerable
   def my_each
     return to_enum(:my_each) unless block_given?
@@ -31,7 +31,7 @@ module Enumerable
   end
   # rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
 
-  def my_all?()
+  def my_all?(param = nil)
     if block_given?
       to_a.my_each { |item| return false if yield(item) == false }
       return true
@@ -55,7 +55,7 @@ module Enumerable
       to_a.my_each { |item| return true if item }
     elsif !param.nil? && (param.is_a? Class)
       to_a.my_each { |item| return true if [item.class, item.class.superclass].include?(param) }
-    elsif !param.nil? && param.instance_of?(regexp)
+    elsif !param.nil? && param.instance_of?(Regexp)
       to_a.my_each { |item| return true if param.match(item) }
     else
       to_a.my_each { |item| return true if item == param }
