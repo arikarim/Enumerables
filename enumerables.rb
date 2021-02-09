@@ -1,23 +1,17 @@
 module Enumerable
   def my_each
-    length.times { |i| yield(self[i]) }
+    length.times { |value| yield(self[value]) }
     self
   end
 
   def my_each_with_index
-    length.times { |i| yield(self[i], i) }
+    length.times { |value| yield(self[value], value) }
     self
   end
 
-  # def my_select   ### WITHOUTH MY_EACH
-  #   array = []
-  #   self.length.times { |i| yield(self[i]) && array.push(self[i]) }
-  #   array
-  # end
-
   def my_select
     array = []
-    my_each { |i| array << i if yield(i) }
+    my_each { |num| array << num if yield(num) }
     array
   end
 
@@ -67,15 +61,15 @@ puts
 control = [1, 2, 8, 5, 5]
 puts "control array = #{control}"
 puts
-control.my_each { |i| print i.to_s + ' ' }
+control.my_each { |value| print value.to_s + ' ' }
 puts
-control.my_each_with_index { |i, ind| print ind.to_s + ':' + i.to_s + ' ' }
+control.my_each_with_index { |value, ind| print ind.to_s + ':' + value.to_s + ' ' }
 puts
-p(control.my_select { |i| i < 3 })
-p(control.my_all? { |i| i < 3 })
-p(control.my_any? { |i| i < 3 })
+p(control.my_select { |num| num > 3 })
+p(control.my_all? { |i| i < 10 })
+p(control.my_any? { |i| i < 5 })
 p(control.my_none? { |i| i < 3 })
 p control.my_count(2)
-p control.my_map(my_proc) { |i| i * 2 }
-p control.my_inject(10) { |sum, i| sum + i }
-p multiply_els(control)
+p control.my_map(my_proc) #{ |i| i * 2 }
+p control.my_inject() { |sum, i| sum + i }
+p multiply_els(control) 
