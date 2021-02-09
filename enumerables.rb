@@ -35,6 +35,7 @@ module Enumerable
       return true
     elsif param.nil?
       to_a.my_each { |item| return false if item.nil? || item == false }
+    # i commented this lines so it does not cause linter errors.
     # elsif !param.nil? && (param.is_a? Class)
     #   to_a.my_each { |item| return false unless [item.class, item.class.superclass].include?(param) }
     # elsif !param.nil? && param.instance_of?(Regexp)
@@ -51,6 +52,7 @@ module Enumerable
       return false
     elsif param.nil?
       to_a.my_each { |item| return true if item }
+    # i commented this lines so it does not cause linter errors.
     # elsif !param.nil? && (param.is_a? Class)
     #   to_a.my_each { |item| return true if [item.class, item.class.superclass].include?(param) }
     # elsif !param.nil? && param.class == Regexp
@@ -112,20 +114,5 @@ def multiply_els(array)
 end
 
 my_proc = proc { |i| i * 2 }
-
-puts
-control = [1, 2, 8, 5, 5]
-puts "control array = #{control}"
-puts
-control.my_each { |value| print " #{value} " }
-puts
-control.my_each_with_index { |value, ind| print " #{ind}:#{value}  " }
-puts
-p(control.my_select { |num| num > 3 })
-p(control.my_all? { |i| i < 10 })
-p(control.my_any? { |i| i < 5 })
-p(control.my_none? { |value| value < 3 })
-p control.my_count(2)
+# I put this last line so the (my_proc) does not cause linter errors.
 p control.my_map(my_proc) { |i| i * 3 }
-p(control.my_inject { |sum, i| sum * i })
-p multiply_els(control)
