@@ -28,6 +28,7 @@ module Enumerable
     to_a.my_each { |item| new_arr << item if yield item }
     new_arr
   end
+  # rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
 
   def my_all?()
     if block_given?
@@ -35,11 +36,10 @@ module Enumerable
       return true
     elsif param.nil?
       to_a.my_each { |item| return false if item.nil? || item == false }
-    # i commented this lines so it does not cause linter errors.
-    # elsif !param.nil? && (param.is_a? Class)
-    #   to_a.my_each { |item| return false unless [item.class, item.class.superclass].include?(param) }
-    # elsif !param.nil? && param.instance_of?(Regexp)
-    #   to_a.my_each { |item| return false unless param.match(item) }
+    elsif !param.nil? && (param.is_a? Class)
+      to_a.my_each { |item| return false unless [item.class, item.class.superclass].include?(param) }
+    elsif !param.nil? && param.instance_of?(Regexp)
+      to_a.my_each { |item| return false unless param.match(item) }
     else
       to_a.my_each { |item| return false if item != param }
     end
@@ -52,11 +52,10 @@ module Enumerable
       return false
     elsif param.nil?
       to_a.my_each { |item| return true if item }
-    # i commented this lines so it does not cause linter errors.
-    # elsif !param.nil? && (param.is_a? Class)
-    #   to_a.my_each { |item| return true if [item.class, item.class.superclass].include?(param) }
-    # elsif !param.nil? && param.class == Regexp
-    #   to_a.my_each { |item| return true if param.match(item) }
+    elsif !param.nil? && (param.is_a? Class)
+      to_a.my_each { |item| return true if [item.class, item.class.superclass].include?(param) }
+    elsif !param.nil? && param.instance_of?(regexp)
+      to_a.my_each { |item| return true if param.match(item) }
     else
       to_a.my_each { |item| return true if item == param }
     end
@@ -116,3 +115,4 @@ end
 my_proc = proc { |i| i * 2 }
 # I put this last line so the (my_proc) does not cause linter errors.
 p control.my_map(my_proc) { |i| i * 3 }
+# rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
