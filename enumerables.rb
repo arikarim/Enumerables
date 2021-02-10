@@ -83,29 +83,30 @@ module Enumerable
     c
   end
 
-  def my_map(my_proc = nil)
-    return to_enum(:my_map) unless block_given? || !my_proc.nil?
+  def my_map(proc_x = nil)
+    return enum_for unless block_given?
 
-    arr = []
-    if proc.nil?
-      to_a.my_each { |item| arr << yield(item) }
+    map_list = []
+    if proc_x.nil?
+      my_each { |element| map_list.push(yield(element)) }
     else
-      to_a.my_each { |item| arr << proc.call(item) }
+      my_each { |element| map_list.push(proc_x.call(element)) }
     end
-    arr
+    map_list
   end
 
-  def my_inject(initial = nil, sym = nil)
-    if !initial.nil? && initial.is_a?(Symbol)
-      sym = initial
-      initial = nil
+  def my_inject(*args)
+    list = is_a?(Range) ? to_a : self
+
+    reduce = args[0] if args[0].is_a?(Integer)
+    operator = args[0].is_a?(Symbol) ? args[0] : args[1]
+
+    if operator
+      list.my_each { |item| reduce = reduce ? reduce.send(operator, item) : item }
+      return reduce
     end
-    if !block_given?
-      to_a.my_each { |item| initial = initial.nil? ? item : initial.send(sym, item) }
-    else
-      to_a.my_each { |item| initial = initial.nil? ? item : yield(initial, item) }
-    end
-    initial
+    list.my_each { |item| reduce = reduce ? yield(reduce, item) : item }
+    reduce
   end
 end
 
