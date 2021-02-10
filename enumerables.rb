@@ -114,7 +114,4 @@ def multiply_els(array)
   array.my_inject(1) { |product, i| product * i }
 end
 
-# my_proc = proc { |i| i * 2 }
-# I put this last line so the (my_proc) does not cause linter errors.
-# p control.my_map(my_proc) { |i| i * 3 }
 # rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
