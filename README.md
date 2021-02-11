@@ -3,7 +3,7 @@
 
 # Enumerables
 
-  This is a Enumerables  project which include some of usefull methods created by our hands without using Ruby built in methods,
+  This is Enumerables project which includes some useful methods enumerates some basic Ruby public instance methods such as each, all, any and select.
 
 ## Built with
 
@@ -17,9 +17,9 @@
 
 ### Setup
 
-- git clone <https://github.com/arikarim/bubble-sort.git>
+- git clone <https://github.com/arikarim/Enumerables.git>
 - cd repo-folder
-- Run using Ruby bubble_sort.rb for first file and ruby bubble_sort_by for second file
+- Run using Ruby enumerables.rb on your command line or terminal 
 
 
 ## Authors
@@ -27,7 +27,7 @@
 
 - GitHub: [@nganifaith](https://github.com/nganifaith)
 - Twitter: [@Bright_Ngani](https://twitter.com/bright_ngani)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ngani-faith/)
+- LinkedIn: [Kongnyu Faith Ngani](https://www.linkedin.com/in/ngani-faith/)
 
 
 👤 **Author 2**
