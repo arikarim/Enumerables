@@ -1,14 +1,12 @@
-
-
-# possibles = []
-# last = 0
-# arrr = keyboards.product(drives).map { |x, y| x + y }
-# arrr.map do |x|
-#   x <= b ? possibles.push(x) : x
-#   last = possibles.max
-#   last
-# end
-# possibles.empty? ? -1 : last
+possibles = []
+last = 0
+arrr = keyboards.product(drives).map { |x, y| x + y }
+arrr.map do |x|
+  x <= b ? possibles.push(x) : x
+  last = possibles.max
+  last
+end
+possibles.empty? ? -1 : last
 
 a = [4, 6, 5, 3, 3, 1]
 n = [4, 6, 5, 3, 3, 1]
