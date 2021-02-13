@@ -16,6 +16,11 @@ a.product(n).map do |x, y|
   x - y == 0 || x - y == 1 ? arr.push(x) : arr
   arr
 end
+begin
+  
+rescue => exception
+  
+end
 
 puts 'result'
 puts arr
