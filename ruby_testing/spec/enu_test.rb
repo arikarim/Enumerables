@@ -119,7 +119,6 @@ RSpec.describe Enumerable do
     it 'Returns the amount of values that are the same as the arg' do
       expect([2, 6, 7].count(2)).to eql([2, 6, 7].count(2))
     end
-
   end
 
   describe '#my_map' do
