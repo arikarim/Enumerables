@@ -36,9 +36,6 @@
 - LinkedIn: [AriKarim](https://www.linkedin.com/in/ari-karim-523bb81b3)
 
 
-
- 
-
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed..
