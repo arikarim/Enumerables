@@ -9,6 +9,7 @@ def my_each
   end
   self
 end
+
 module Enumerable
   def my_each
     return to_enum(:my_each) unless block_given?
@@ -125,5 +126,3 @@ def multiply_els(array)
 end
 
 # rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
-arr = [1,2]
-puts arr.my_map {|x| x.to_i + 2}
