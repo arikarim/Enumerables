@@ -4,22 +4,27 @@
 # Enumerables
 
   This is Enumerables project which includes some useful methods enumerates some basic Ruby public instance methods such as each, all, any and select.
-
+  
 ## Built with
 
 - Ruby
 
+## Prequisites
 
-### Prerequisites
-- Ruby
-- basic knownledge of command line
-- Command line interface
+Ruby installed on your local machine.
 
-### Setup
+## Testing
+In this project we used Rspec to test all the methods.
 
-- git clone <https://github.com/arikarim/Enumerables.git>
-- cd repo-folder
-- Run using Ruby enumerables.rb on your command line or terminal 
+## Install
+- In a terminal window type gem install rspec
+- Once rspec install has finished, type rspec --init
+- You will see a folder spec and a file .rspec
+- Inside spec folder you'll see a spec_helper.rb file.
+
+## Run
+inside the repository there is a rspec-testing files called enu_test.
+- go to the folder inside your terminal type rspec
 
 
 ## Authors
