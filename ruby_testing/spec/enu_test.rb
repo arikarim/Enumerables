@@ -8,19 +8,19 @@ RSpec.describe Enumerable do
       expect([2, 4].my_each { |x| x }).to eql([2, 4])
     end
     it 'Returns true if contains only nils and false' do
-      expect([true, false, nil].my_none?).to eql(false)
+      expect([false, nil].my_none?).to eql(true)
     end
     it 'Returns true if contains only nils and false' do
-      expect([false, nil].my_none?).to eql(true)
+      expect([true, false, nil].my_none?).to eql(false)
     end
     it 'return true if there are floats' do
       expect([2, 3.14, 432].my_none?(Float)).to eql(false)
     end
-    it 'Returns true if array is empty' do
-      expect([].my_none?).to eql(true)
-    end
     it 'return true if word don t own letter' do
       expect(%w[ant bear car].my_none?(/s/)).to eql(true)
+    end
+    it 'Returns true if array is empty' do
+      expect([].my_none?).to eql(true)
     end
     it 'Returns true if there are only nils' do
       expect([nil].my_none?).to eql(true)
@@ -97,11 +97,11 @@ RSpec.describe Enumerable do
     it 'multiply all numbers using blocks' do
       expect((5..10).my_inject(1) { |x, n| x * n }).to eql(151_200)
     end
-    it 'multiply all numbers' do
-      expect((5..10).my_inject(1, :*)).to eql(151_200)
-    end
     it 'sum all using block' do
       expect((1..6).my_inject { |x, n| x + n }).to eql(21)
+    end
+    it 'multiply all numbers' do
+      expect((5..10).my_inject(1, :*)).to eql(151_200)
     end
   end
 
@@ -115,11 +115,11 @@ RSpec.describe Enumerable do
     it 'Returns false if dont have s' do
       expect(%w[ant bear car].my_all?(/s/)).to eql(false)
     end
-    it 'Returns true if all inputs have a value of true' do
-      expect([true, nil, 99].my_all?).to eql(false)
-    end
     it 'Returns true if the words are greater than or equal to 3' do
       expect(%w[ant bear car].my_all? { |word| word.length >= 3 }).to eql(true)
+    end
+    it 'Returns true if all inputs have a value of true' do
+      expect([true, nil, 99].my_all?).to eql(false)
     end
     it 'Returns true if array is empty' do
       expect([].my_all?).to eql(true)
