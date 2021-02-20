@@ -16,6 +16,11 @@ Knowledge about Rspec and Ruby.
 
 ## Testing
 In this project, we used Rspec to test all the methods.
+do this steps:
+1/navigate to "ruby_testing" directory inside the project
+2/ run "rspec spec/enu_test.rb"
+
+or just run this command(rspec ruby_testing/spec/enu_test.rb)
 
 ## Install
 - In a terminal window type gem install RSpec
