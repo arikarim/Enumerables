@@ -23,8 +23,8 @@ In this project we used Rspec to test all the methods.
 - Inside spec folder you'll see a spec_helper.rb file.
 
 ## Run
-inside the repository there is a rspec-testing files called enu_test.
-- go to the folder inside your terminal type rspec
+inside the repository there is a rspec-testing file called enu_test.
+- go to the folder inside your terminal and type rspec
 
 
 ## Authors
