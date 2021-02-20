@@ -12,19 +12,20 @@
 ## Prequisites
 
 Ruby installed on your local machine.
+Knowledge about Rspec and Ruby.
 
 ## Testing
-In this project we used Rspec to test all the methods.
+In this project, we used Rspec to test all the methods.
 
 ## Install
-- In a terminal window type gem install rspec
-- Once rspec install has finished, type rspec --init
+- In a terminal window type gem install RSpec
+- Once RSpec install has finished, type RSpec --init
 - You will see a folder spec and a file .rspec
-- Inside spec folder you'll see a spec_helper.rb file.
+- Inside the spec folder you'll see a spec_helper.rb file.
 
 ## Run
-inside the repository there is a rspec-testing file called enu_test.
-- go to the folder inside your terminal and type rspec
+inside the repository, there is a RSpec-testing file called enu_test.
+- go to the folder inside your terminal and type RSpec
 
 
 ## Authors
